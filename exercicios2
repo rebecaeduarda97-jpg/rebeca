@@ -1,0 +1,73 @@
+. O que é o Node.js?
+Explique sua finalidade e por que ele é considerado um ambiente de execução e não uma linguagem de programação.
+
+O Node.js é um ambiente de execução (runtime environment) de código aberto e multiplataforma, construído sobre o motor V8 JavaScript do Google Chrome
+
+**2.** Qual a diferença entre **Node.js** e **JavaScript executado no navegador**?
+Cite pelo menos **duas diferenças**.
+
+Node.js e o JavaScript no navegador compartilham a mesma linguagem base (JavaScript) e o motor V8 (no caso do Chrome/Node), mas são ambientes de execução totalmente distintos, projetados para propósitos diferente
+
+3. O que é o **V8 Engine** e qual sua importância para o funcionamento do Node.js?
+ V8 Engine é um motor (engine) de JavaScript de alto desempenho, de código aberto, desenvolvido pelo Google e escrito em C. Ele é o "motor" que alimenta o navegador Google Chrome, mas também foi fundamentalmente adotado como o núcleo do ambiente 
+
+**4.** Explique o conceito de **I/O não bloqueante** no Node.js.
+Por que isso melhora o desempenho de aplicações?
+
+ conceito de I/O (Input/Output - Entrada/Saída) não bloqueante no Node.js refere-se à capacidade do ambiente de execução de iniciar operações de leitura/escrita (como acessar bancos de dados, ler arquivos ou realizar requisições de rede
+
+**5.** O que é o **Event Loop**?
+Descreva, de forma resumida, como ele funciona.
+
+ Event Loop (Loop de Eventos) é um mecanismo fundamental no JavaScript (especialmente no Node.js e navegadores) que gerencia a execução de código assíncrono, permitindo que uma linguagem de thread única (single-threaded)
+
+**6.** O que são **módulos** no Node.js?
+Explique a diferença entre:
+
+* Módulos internos
+* Módulos externos
+* Módulos criados pelo desenvolvedor
+
+São os módulos nativos que já vêm embutidos no ambiente de execução do Node.js. Não precisam ser instalados (via npm). 
+Características: Disponíveis globalmente, prontos para uso assim que o Node.js é instalado.
+Exemplos: fs (File System para manipulação de arquivos), http (criação de servidores), path (trabalhar com diretórios), os (informações do sistema operacional).
+Importação: const fs = require('fs'); 
+2. Módulos Externos (Third-party/External Modules) 
+São módulos desenvolvidos pela comunidade ou terceiros, disponibilizados publicamente através de gerenciadores de pacotes como o npm. 
+Características: Precisam ser instalados no projeto usando o comando npm install <nome-do-modulo> e ficam armazenados na pasta node_modules.
+Exemplos: express, lodash, mongoose.
+Importação: const express = require('express'); 
+3. Módulos Criados pelo Desenvolvedor (Local/Custom Modules) 
+São módulos criados pelo próprio desenvolvedor para encapsular funcionalidades específicas do projeto. 
+Características: São arquivos ou pastas criados localmente. Devem ser exportados usando module.exports ou exports e importados usando caminhos relativos (./ ou ../).
+Exemplos: Um arquivo calculadora.js que exporta funções de soma e subtração para uso no arquivo principal da aplicação.
+Importação: const minhaLib = require('./meusModulos/minhaLib'); 
+
+
+
+
+
+**7.** Para que serve o arquivo **package.json** em um projeto Node.js?
+Cite pelo menos **três informações** que ele pode conter.
+
+O arquivo package.json é um componente fundamental e obrigatório na raiz de qualquer projeto Node.js. Ele serve como o "manifesto" ou documento de configuração do projeto, centralizando informações sobre metadados, dependências e automação de scrip
+
+**8.** O que é o **npm**?
+Explique sua função no desenvolvimento de aplicações Node.js.
+
+npm (Node Package Manager) é o gerenciador de pacotes padrão para o ambiente de execução Node.js. Ele é incluído automaticamente quando você instala o Node.js no computador, tornando-se uma ferramenta nativa para o desenvolvimento com JavaScript. O npm é composto por três partes: um site para descoberta de pacotes, um registro (um grande banco de dados de software de código aberto) e uma interface de linha de comando
+
+**9.** O que é uma **API REST** e como o Node.js pode ser usado para desenvolvê-la?
+
+ma API REST (Representational State Transfer) é um estilo arquitetural para projetar aplicações em rede que utiliza o protocolo HTTP para permitir a comunicação entre sistemas de forma leve, padronizada e eficiente. 
+
+
+**10.** Cite **duas vantagens** e **duas desvantagens** do uso do Node.js em aplicações web.
+
+O Node.js é amplamente utilizado no desenvolvimento web devido às suas características únicas. Abaixo estão duas vantagens e duas desvantagens de seu uso: 
+Vantagens
+Alto desempenho e escalabilidade: O Node.js utiliza um modelo de I/O (entrada/saída) não bloqueante e baseado em eventos, o que o torna extremamente rápido e eficiente para lidar com múltiplas requisições simultâneas, ideal para aplicações em tempo real (como chats e streaming).
+Uso de uma única linguagem (JavaScript) Full-Stack: Permite que desenvolvedores utilizem JavaScript tanto no front-end quanto no back-end. Isso unifica a equipe de desenvolvimento e facilita a troca de dados, além de simplificar o aprendizado e a manutenção do código. 
+Desvantagens
+Baixo desempenho em tarefas intensivas de CPU: Como o Node.js é executado em uma única thread (single-threaded), ele não é adequado para aplicações que exigem processamento pesado de CPU, como cálculos complexos, edição de vídeo ou processamento de imagem. Tarefas pesadas podem bloquear a "thread" principal e travar a aplicação.
+Complexidade no gerenciamento de código assíncrono (Callback Hell): O uso intensivo de chamadas assíncronas (callbacks) pode tornar o código difícil de ler, manter e depurar, criando estruturas complexas conhecidas como "Callback Hell" (embora Promises e Async/Await tenham ameniza
