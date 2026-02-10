@@ -1,0 +1,17 @@
+maior = 0
+menor = 0
+
+for i in range(8):
+    preco = float(input(f"Digite o preço do {i+1}º produto: "))
+    
+    if i == 0:
+        maior = preco
+        menor = preco
+    else:
+        if preco > maior:
+            maior = preco
+        if preco < menor:
+            menor = preco
+
+print(f"O maior preço digitado foi: R$ {maior:.2f}")
+print(f"O menor preço digitado foi: R$ {menor:.2f}")
