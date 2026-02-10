@@ -1,0 +1,48 @@
+total_idade = 0
+total_homens = 0
+total_mulheres = 0
+soma_idade_homens = 0
+mulheres_mais_20 = 0
+
+for i in range(5):
+    idade = int(input(f"Digite a idade da {i+1}ª pessoa: "))
+    sexo = input(f"Digite o sexo da {i+1}ª pessoa (M/F): ").strip().upper()
+    
+    total_idade += idade
+    
+    if sexo == 'M':
+        total_homens += 1
+        soma_idade_homens += idade
+    elif sexo == 'F':
+        total_mulheres += 1
+        if idade > 20:
+            mulheres_mais_20 += 1
+    else:
+        print("Sexo inválido, ignorado.")
+
+media_idade = total_idade / 5
+media_idade_homens = soma_idade_homens / total_homens if total_homens > 0 else 0
+
+print("\nResultados:")
+print(f"Homens cadastrados: {total_homens}")
+print(f"Mulheres cadastradas: {total_mulheres}")
+print(f"Média de idade do grupo: {media_idade:.1f} anos")
+print(f"Média de idade dos homens: {media_idade_homens:.1f} anos")
+print(f"Mulheres com mais de 20 anos: {mulheres_mais_20}")
+Digite a idade da 1ª pessoa: 25
+Digite o sexo da 1ª pessoa (M/F): F
+Digite a idade da 2ª pessoa: 30
+Digite o sexo da 2ª pessoa (M/F): F
+Digite a idade da 3ª pessoa: 18
+Digite o sexo da 3ª pessoa (M/F): M
+Digite a idade da 4ª pessoa: 22
+Digite o sexo da 4ª pessoa (M/F): M
+Digite a idade da 5ª pessoa: 16
+Digite o sexo da 5ª pessoa (M/F): F
+
+Resultados:
+Homens cadastrados: 2
+Mulheres cadastradas: 3
+Média de idade do grupo: 22.2 anos
+Média de idade dos homens: 20.0 anos
+Mulheres com mais de 20 anos: 2
