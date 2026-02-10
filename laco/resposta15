@@ -1,0 +1,23 @@
+total_idade = 0
+mais_de_18 = 0
+menos_de_5 = 0
+maior_idade = 0
+
+for i in range(10):
+    idade = int(input(f"Digite a idade da {i+1}ª pessoa: "))
+    
+    total_idade += idade
+    
+    if idade > 18:
+        mais_de_18 += 1
+    if idade < 5:
+        menos_de_5 += 1
+    if idade > maior_idade:
+        maior_idade = idade
+
+media_idade = total_idade / 10
+
+print(f"\nMédia de idade do grupo: {media_idade:.1f} anos")
+print(f"Pessoas com mais de 18 anos: {mais_de_18}")
+print(f"Pessoas com menos de 5 anos: {menos_de_5}")
+print(f"Maior idade lida: {maior_idade} anos")
