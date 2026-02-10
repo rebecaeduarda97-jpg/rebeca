@@ -1,0 +1,23 @@
+import random
+
+numero_sorteado = random.randint(1, 10)
+tentativas = 4
+acertou = False
+
+print("=== Jogo do Número ===")
+print("Tente adivinhar o número que estou pensando (entre 1 e 10).")
+
+for i in range(1, tentativas + 1):
+    palpite = int(input(f"Tentativa {i} de {tentativas}: "))
+    
+    if palpite == numero_sorteado:
+        print(f"Parabéns! Você acertou o número {numero_sorteado} na {i}ª tentativa!")
+        acertou = True
+        break
+    elif palpite < numero_sorteado:
+        print("O número é maior.")
+    else:
+        print("O número é menor.")
+
+if not acertou:
+    print(f"Suas tentativas acabaram! O número era {numero_sorteado}.")
